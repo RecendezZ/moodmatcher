@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+#container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+select:focus, textarea:focus, button:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+button[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+#resetBtn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+#resetBtn:hover {
+    background-color: #5a6268;
+}
+
+#result {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+#result.message {
+    display: block;
+}
+
+#resultMessage {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#resultNote {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#resultImage {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+#container.happy {
+    background: #fff7d6;
+}
+
+#container.sad {
+    background: #dcecff;
+}
+
+#container.calm {
+    background: #e6fff3;
+}
+
+@media (max-width: 600px) {
+    #container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    select, textarea, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #resultMessage {
+        font-size: 18px;
+    }
+
+    #resultImage {
+        width: 100px;
+        height: 100px;
+    }
+}
