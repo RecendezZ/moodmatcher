@@ -12,7 +12,8 @@
     <div id="container">
         <form id="moodForm">
             <div>
-                <label for="mood">HOW ARE YOU FEELING TODAY</label><br>
+                <h1>Mood Matcher</h1>
+                <h3><label for="mood">HOW ARE YOU FEELING TODAY</label></h3><br>
                 <select id="mood" name="mood">
                     <option value="">-- Choose One --</option>
                     <option value="Sad">Sad</option>
@@ -22,7 +23,7 @@
             </div>
 
             <div>
-                <label for="note">Why do you feel this way?</label><br>
+                <h2><label for="note">Why do you feel this way?</label></h2><br>
 
                 <textarea id="note" name="note"></textarea>
             </div>
@@ -52,7 +53,7 @@
 
         // Image srC the links for the images 
         const imageUrls = {
-            Happy: 'https://cdn-icons-png.flaticon.com/512/742/742751.png',
+            Happy: ' https://cdn-icons-png.flaticon.com/512/742/742751.png',
             Sad: 'https://cdn-icons-png.flaticon.com/512/742/742752.png',
             Calm: 'https://cdn-icons-png.flaticon.com/512/5786/5786952.png'
         };
@@ -66,7 +67,7 @@
         const moodSelect = document.querySelector('#mood');
         const noteInput = document.querySelector('#note');
 
-        // Submit function to submit information
+        // Submit function for button and prevents the information from being sent with out h 
         moodForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -89,12 +90,12 @@
 
             // if and else to match how you feel
             if (userMood === 'Happy') {
-                outputMessage = '🎉 You are feeling happy! You are a happy camper.';
+                outputMessage = '🎉 You are feeling happy! This is great you are a happy camper.';
                 imgAlt = 'Happy emoji';
                 imgSrc = imageUrls.Happy;
                 container.classList.add('happy');
             } else if (userMood === 'Sad') {
-                outputMessage = "💙 You are feeling sad. It's okay to feel this way. Just know todays nothing tomorrow cant fix.";
+                outputMessage = "💙 You are feeling sad. It's okay to feel this way. Just know today is nothing tomorrow can't fix.";
                 imgAlt = 'Sad emoji';
                 imgSrc = imageUrls.Sad;
                 container.classList.add('sad');
@@ -128,7 +129,7 @@
             resultImage.alt = '';
             resultSection.classList.remove('message');
             container.classList.remove('happy', 'sad', 'calm');
-            console.log('Tell me how your feel');
+            console.log('Tell me how your feelings');
         });
     </script>
 </body>

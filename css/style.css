@@ -1,17 +1,51 @@
+:root {
+  --primary-sunglow: #ffd034;
+  --secondary-white: #ffff;
+  --secondary-purp: #300496
+  --secondary-light-blue: #cadbf8;
+  --secondary-rust: #ba5a5a;
+  --secondary-bluetiful: #2b70e4;
+  --secondary-black: #000000;
+  --secondary-vegan:#209d5c;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* BASIC FORMATTING */
+html {
+  box-sizing: border-box;
+} 
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Cabin", sans-serif;;
     padding: 20px;
-    background: #f5f5f5;
+    background: var(--secondary-white);
     margin: 0;
 }
+
+
+h1 {
+    padding-left: 17rem;
+}
+
+
 
 #container {
     max-width: 500px;
     margin: 0 auto;
-    background: white;
+    background: var(--secondary-white);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--secondary-vegan)rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -23,14 +57,14 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
-    color: #333;
+    color: var(--secondary-light-blue);
 }
 
 select, textarea, button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-sunglow);
     border-radius: 5px;
 }
 
@@ -41,25 +75,25 @@ textarea {
 
 select:focus, textarea:focus, button:focus {
     outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    border-color: var(--primary-sunglow);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
 }
 
 button[type="submit"] {
-    background-color: #4a90e2;
-    color: white;
+    background-color: var(--secondary-bluetiful);
+    color: var(--secondary-black);
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    
 }
 
 button[type="submit"]:hover {
-    background-color: #357abd;
+    background-color: var(--primary-sunglow);
 }
 
 #resetBtn {
-    background-color: #6c757d;
+    background-color: var(--secondary-black);
     color: white;
     border: none;
     cursor: pointer;
@@ -71,7 +105,7 @@ button[type="submit"]:hover {
 #resetBtn:hover {
     background-color: #5a6268;
 }
-
+ 
 #result {
     margin-top: 20px;
     display: none;
