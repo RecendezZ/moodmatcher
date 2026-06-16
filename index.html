@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Matcher</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -34,104 +35,12 @@
         <section id="result">
             <h2 id="resultMessage"></h2>
             <p id="resultNote"></p>
-            <img id="resultImage" src="" alt="">
+            <img id="resultImage">
         </section>
 
         <button id="resetBtn" type="button">Reset</button>
     </div>
-
-    <script>
-
-        const output = document.querySelector('#resultMessage');
-        const resultNote = document.querySelector('#resultNote');
-        const resultImage = document.querySelector('#resultImage');
-
-        // Create three variables
-        let outputMessage = '';
-        let imgAlt = '';
-        let imgSrc = '';
-
-        // Image srC the links for the images 
-        const imageUrls = {
-            Happy: ' https://cdn-icons-png.flaticon.com/512/742/742751.png',
-            Sad: 'https://cdn-icons-png.flaticon.com/512/742/742752.png',
-            Calm: 'https://cdn-icons-png.flaticon.com/512/5786/5786952.png'
-        };
-
-        // gra bs elements by id using querySelector
-
-        const moodForm = document.querySelector('#moodForm');
-        const resultSection = document.querySelector('#result');
-        const resetBtn = document.querySelector('#resetBtn');
-        const container = document.querySelector('#container');
-        const moodSelect = document.querySelector('#mood');
-        const noteInput = document.querySelector('#note');
-
-        // Submit function for button and prevents the information from being sent with out h 
-        moodForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = {
-                mood: moodSelect.value,
-                note: noteInput.value
-            };
-
-            // See the data in the console
-            console.log('Form Data:', formData);
-            console.log('Mood:', formData.mood);
-            console.log('Note:', formData.note);
-
-            // dotnotation saves the data from the form
-            const userMood = formData.mood;
-            const userNote = formData.note;
-
-            // removes classes
-            container.classList.remove('happy', 'sad', 'calm');
-
-            // if and else to match how you feel
-            if (userMood === 'Happy') {
-                outputMessage = '🎉 You are feeling happy! This is great you are a happy camper.';
-                imgAlt = 'Happy emoji';
-                imgSrc = imageUrls.Happy;
-                container.classList.add('happy');
-            } else if (userMood === 'Sad') {
-                outputMessage = "💙 You are feeling sad. It's okay to feel this way. Just know today is nothing tomorrow can't fix.";
-                imgAlt = 'Sad emoji';
-                imgSrc = imageUrls.Sad;
-                container.classList.add('sad');
-            } else if (userMood === 'Calm') {
-                outputMessage = '🧘 You are feeling calm. Peace is beautiful. Enjoy this tranquility. Embrace the tranquility';
-                imgAlt = 'Calm emoji';
-                imgSrc = imageUrls.Calm;
-                container.classList.add('calm');
-            } else {
-                outputMessage = 'Tell me how you feel!';
-                imgAlt = '';
-                imgSrc = '';
-            }
-
-            // updates the dom method using textcontent
-            output.textContent = outputMessage;
-            resultNote.textContent = userNote || 'No note provided';
-            resultImage.src = imgSrc;
-            resultImage.alt = imgAlt;
-
-            resultSection.classList.add('message');
-        });
-
-        // Reset button that clears the displayed result to start process over  
-        resetBtn.addEventListener('click', function () {
-            moodSelect.value = '';
-            noteInput.value = '';
-            output.textContent = '';
-            resultNote.textContent = '';
-            resultImage.src = '';
-            resultImage.alt = '';
-            resultSection.classList.remove('message');
-            container.classList.remove('happy', 'sad', 'calm');
-            console.log('Tell me how your feelings');
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
